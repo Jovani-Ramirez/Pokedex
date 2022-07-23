@@ -1,0 +1,56 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.img-logo {
+    width: 70px;
+    height: 70px;
+}
+
+.txt {
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+}
+
+.container-img {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-self: flex-end;
+}
+
+.container-btn {
+  width: 90px;
+  margin-left: 20px;
+}
+
+@media screen and ( max-width: 1366px ) {
+  .img-pokeball {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+@media screen and ( max-width: 1024px ) {
+  .title {
+    margin: 20px 20px;
+  }
+}
+
+@media screen and ( max-width: 700px ) {
+  .title {
+    margin: 20px 20px;
+  }
+}

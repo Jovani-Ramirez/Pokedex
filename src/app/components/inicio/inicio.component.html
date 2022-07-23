@@ -1,0 +1,32 @@
+<div class="container">
+  <mat-form-field class="search-container">
+    <mat-label class="txt">Search</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Example: Mewtwo" #input>
+  </mat-form-field>
+  
+  <div class="mat-elevation-z8 container-pokemons">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+      <ng-container matColumnDef="id" class="container-cells">
+        <div *matHeaderCellDef class="block">
+          <h2 class="txt-dex">Pokedex Nacional</h2>
+        </div>
+        <mat-card mat-cell *matCellDef="let poke" (click)="getPokemon(poke)" class="card-pokemon">
+          <div class="img-container">
+            <img [src]="poke.image" alt="Pokemon" class="img-poke">
+          </div>
+          <p class="name-poke">{{poke.name}}</p>
+        </mat-card>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+      <div class="mat-row err" *matNoDataRow>
+        <mat-card class="mat-cell message" colspan="4">No data matching the filter "{{input.value}}"</mat-card>
+      </div>
+    
+    </table>
+    <mat-paginator [pageSizeOptions]="[5,10,25, 100]" class="paginator"></mat-paginator>
+  </div>
+</div>
